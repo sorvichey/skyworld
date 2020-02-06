@@ -1,0 +1,82 @@
+body {
+	font-family: 'Battambang', 'Open Sans', sans-serif;
+}
+.logo{
+    margin-top: -47px;
+}
+.mx-left{
+    margin-left: 18px!important;
+}
+
+.sidebar-nav > li.active a{
+	background: #343a40 !important;
+}
+
+.search_input {
+	
+	padding: 1px;
+	font-size: 14px;
+}
+
+/* invoice */
+.invoice-title h2, .invoice-title h3 {
+    display: inline-block;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+}
+.table > thead > tr > .no-line {
+    border-bottom: none;
+}
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #85ce36;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(133, 206, 54, 0.54);
+}
+/* .../ invoice */
+/* modal */
+.center {
+    margin-top:50px;   
+}
+.modal-header {
+	padding-bottom: 5px;
+}
+.modal-footer {
+    	padding: 0;
+	}
+.input-group span.input-group-addon {
+	padding: 5px 13px;
+}
+.btc {
+	padding: 8px 15px;
+}
+.modal-footer .btn-group button {
+	height:40px;
+	border-top-left-radius : 0;
+	border-top-right-radius : 0;
+	border: none;
+	border-right: 1px solid #ddd;
+}
+	
+.modal-footer .btn-group:last-child > button {
+	border-right: 0;
+}
+
+@media (min-width: 576px) {
+.form-inline label {
+	justify-content: left;
+}
+}
+/* .../ modal */
+
+.td-gray-bg {
+	background: #f8f9fa;
+}
