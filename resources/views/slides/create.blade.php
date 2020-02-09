@@ -5,9 +5,9 @@
     <div class="card card-gray">
         <div class="card-header">
             <div class="header-block">
-                <p class="title">បង្កើត ស្លាយរូបភាព
+                <p class="title">Create Slide
                     <a href="{{url('admin/slide')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
-                        <i class="fa fa-mail-reply"></i> ត្រលប់ក្រោយ</a>
+                        <i class="fa fa-mail-reply"></i> Back</a>
                 </p>
             </div>
         </div>

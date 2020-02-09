@@ -73,14 +73,14 @@ class SlideController extends Controller
         }
     }
     // delete
-    public function delete($id)
+    public function delete(Request $r)
     {
-        // if(!Right::check('Slide', 'd'))
-        // {
+        // if(!Right::check('Customer', 'd')){
         //     return view('permissions.no');
         // }
-        DB::table('slides')->where('id', $id)->update(['active'=>0]);
-        return redirect('/admin/slide');
+        DB::table('slides')->where('id', $r->id)->update(['active'=>0]);
+        $r->session()->flash('sms', 'Data has been deleted successfully!');
+        return redirect('admin/slide');
     }
     public function edit($id)
     {

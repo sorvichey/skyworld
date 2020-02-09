@@ -11,6 +11,9 @@
                 </div>
            </div>
         </div>
+        
+        <div class="card-block">
+
         @if(Session::has('sms'))
                     <div class="alert alert-success" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -43,15 +46,15 @@
                         </ul>
                     </div>
                 @endif
-        <div class="card-block">
-    
+
+
                 <div class="table-flip-scroll">
 
                     <table class="table table-striped table-sm table-bordered table-hover flip-content">
                         <thead class="flip-header">
                             <tr>
                                 <th>&numero;</th>
-                                <th>Feature Image</th> 
+                                <th>Featured Image</th> 
                                 <th>Menu</th>
                                 <th>Order</th>
                                 <th>Action</th>

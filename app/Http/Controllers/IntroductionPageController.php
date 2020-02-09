@@ -46,8 +46,8 @@ class IntroductionPageController extends Controller
             
         );
         
-        $sms = "The new page has been created successfully.";
-        $sms1 = "Fail to create the new page, please check again!";
+        $sms = "The new introdcution page has been created successfully.";
+        $sms1 = "Fail to create the new introduction page, please check again!";
         $i = DB::table('introduction_pages')->insert($data);
         if ($i)
         {

@@ -60,7 +60,7 @@
                         <label for="Name" class="col-sm-4 form-control-label">&nbsp;</label>
                         <div class="col-sm-8">
                             <button type="submit" name="submit" class="btn btn-oval btn-primary"> 
-                                <i class="fa fa-save "></i> Save</button>
+                                <i class="fa fa-save "></i> Save Change</button>
                         </div>
                     </div>
                 </form>
