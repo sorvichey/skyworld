@@ -85,6 +85,11 @@
 									<i class="fa fa-coffee"></i> ផលិតផល </a>
 								</li>
                                 
+                                <li id="menu_service">
+                                    <a href="{{url('/admin/service')}}">
+									<i class="fa fa-bars"></i> Service </a>
+								</li>
+
                                 <li id="menu_page">
                                     <a href="{{url('admin/page')}}">
                                     <i class="fa fa-flag"></i> Page

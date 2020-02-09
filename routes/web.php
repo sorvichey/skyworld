@@ -79,4 +79,12 @@ Route::get('/admin/intropage/edit/{id}', "IntroductionPageController@edit");
 Route::post('/admin/intropage/update', "IntroductionPageController@update");
 Route::get('/admin/intropage/delete/{id}',"IntroductionPageController@delete");
 
+//service
+Route::get('/admin/service', "ServiceController@index");
+Route::get('/admin/service/create', "ServiceController@create");
+Route::post('/admin/service/save', "ServiceController@save");
+Route::get('/admin/service/edit/{id}', "ServiceController@edit");
+Route::post('/admin/service/update', "ServiceController@update");
+Route::get('/admin/service/delete/{id}',"ServiceController@delete");
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

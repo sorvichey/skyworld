@@ -59,9 +59,7 @@ class MenuController extends Controller
         // }
         $data['menu'] = DB::table('menus')
             ->where('id', $id)
-            ->first();
-
-            
+            ->first();  
         return view('menus.edit', $data);
     }
     public function update(Request $r)
