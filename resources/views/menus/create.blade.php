@@ -5,9 +5,9 @@
     <div class="card card-gray">
         <div class="card-header">
             <div class="header-block">
-                <p class="title">Edit Slide
-                    <a href="{{url('admin/slide')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
-                        <i class="fa fa-mail-reply"></i> Back</a>
+                <p class="title">Create Menu
+                    <a href="{{url('admin/menu')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
+                        <i class="fa fa-mail-reply"></i>Back</a>
                 </p>
             </div>
         </div>
@@ -46,48 +46,28 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{url('admin/slide/update')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{url('admin/menu/save')}}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
-                    <input type="hidden" value="{{$slide->id}}" name="id">
-                    <div class="form-group row">
-                        <label for="menu" class="col-sm-4 form-control-label">Menu</label>
-                        <div class="col-sm-8">
-                        <select name="menu_id" class="form-control chosen-select" id="menu_id" required>
-							<option value="">-- Select --</option>
-							@foreach($menus as $mid)
-							<option value="{{$mid->id}}" {{$slide->menu_id==$mid->id?'selected':''}}>{{$mid->name}}</option>
-							@endforeach
-						</select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group row">
-                        <label for="order" class="col-sm-4 form-control-label">Order</label>
-                        <div class="col-sm-8">
-                            <input type="number" step="1" name='order' id="order" class='form-control' value="{{$slide->order}}">
-                        </div>
-                    </div>
                    
                     <div class="form-group row">
-                        <label class="col-sm-4 form-control-label">Featured Image  <span class="text-danger">(1920 × 720 pixels)</span></label>
+                        <label for="name" class="col-sm-4 form-control-label">Name <span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="file" class="form-control" name="featured_image" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)">
-                            <div style="margin-top: 3px">
-                                <img src="{{asset($slide->featured_image)}}" alt="" width="200" id="preview">
-                            </div>
+                            <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" required>
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <label for="Name" class="col-sm-4 form-control-label">&nbsp;</label>
                         <div class="col-sm-8">
                             <button type="submit" name="submit" class="btn btn-oval btn-primary"> 
-                                <i class="fa fa-save "></i> Save Change</button>
+                                <i class="fa fa-save "></i> Save</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-    </div>                 
+    </div>
+                            
 @endsection
 
 @section('js')
@@ -96,12 +76,9 @@
             $("#sidebar-menu li ").removeClass("active open");
 			$("#sidebar-menu li ul li").removeClass("active");
 			
-            $("#menu_slide").addClass("active");
+            $("#menu_menu").addClass("active");
 			
         });
-        function loadFile(e){
-            var output = document.getElementById('preview');
-            output.src = URL.createObjectURL(e.target.files[0]);
-        }
+        
     </script>
 @endsection

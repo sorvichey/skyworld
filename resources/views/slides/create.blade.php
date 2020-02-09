@@ -50,34 +50,29 @@
                     {{csrf_field()}}
 
                     <div class="form-group row">
-                        <label for="title" class="col-sm-4 form-control-label">ចំណងជើង </label>
+                        <label for="menu_id" class="col-sm-4 form-control-label">Menu </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="title" name="title" value="{{old('titile')}}">
+                        <select name="menu_id" class="form-control chosen-select" id="menu_id" required>
+								<option value="">-- Select --</option>
+								@foreach($menus as $m)
+								<option value="{{$m->id}}">{{$m->name}}</option>
+								@endforeach
+							</select>
                         </div>
                     </div>
+                    
+                    
                     <div class="form-group row">
-                        <label for="price" class="col-sm-4 form-control-label">តម្លៃ </label>
-                        <div class="col-sm-8">
-                            <input  type="number" step="0.1" class="form-control" id="price" name="price" value="{{old('price')}}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="short_description" class="col-sm-4 form-control-label">ការពិពណ៌នាខ្លី </label>
-                        <div class="col-sm-8">
-                            <textarea name="short_description" class="form-control"  id="short_description" cols="30" rows="3"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="order" class="col-sm-4 form-control-label">លេខលំដាប់</label>
+                        <label for="order" class="col-sm-4 form-control-label">Order</label>
                         <div class="col-sm-8">
                             <input type="number" step="1" name='order' id="order" class='form-control' value="{{old('order')}}">
                         </div>
                     </div>
                    
                     <div class="form-group row">
-                        <label class="col-sm-4 form-control-label">រូបភាពស្លាយ  <span class="text-danger">(1920 × 720 pixels)</span></label>
+                        <label class="col-sm-4 form-control-label">Featured Image  <span class="text-danger">(1920 × 720 pixels)</span></label>
                         <div class="col-sm-8">
-                            <input type="file" class="form-control" name="photo" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)">
+                            <input type="file" class="form-control" name="featured_image" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)" required>
                             <div style="margin-top: 3px">
                                 <img src="{{asset('fronts/slides/default.png')}}" alt="" width="200" id="preview">
                             </div>
@@ -87,7 +82,7 @@
                         <label for="Name" class="col-sm-4 form-control-label">&nbsp;</label>
                         <div class="col-sm-8">
                             <button type="submit" name="submit" class="btn btn-oval btn-primary"> 
-                                <i class="fa fa-save "></i> រក្សាទុក</button>
+                                <i class="fa fa-save "></i> Save</button>
                         </div>
                     </div>
                 </form>

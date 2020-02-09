@@ -62,4 +62,21 @@ Route::get('/admin/page/delete/{id}', "PageController@delete");
 Route::post('/admin/page/save', "PageController@save");
 Route::post('/admin/page/update', "PageController@update");
 
+
+// menu
+Route::get('/admin/menu', "MenuController@index");
+Route::get('/admin/menu/create', "MenuController@create");
+Route::post('/admin/menu/save', "MenuController@save");
+Route::get('/admin/menu/edit/{id}', "MenuController@edit");
+Route::post('/admin/menu/update', "MenuController@update");
+Route::get('/admin/menu/delete/{id}',"MenuController@delete");
+
+// introduction page
+Route::get('/admin/intropage', "IntroductionPageController@index");
+Route::get('/admin/intropage/create', "IntroductionPageController@create");
+Route::post('/admin/intropage/save', "IntroductionPageController@save");
+Route::get('/admin/intropage/edit/{id}', "IntroductionPageController@edit");
+Route::post('/admin/intropage/update', "IntroductionPageController@update");
+Route::get('/admin/intropage/delete/{id}',"IntroductionPageController@delete");
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

@@ -5,9 +5,9 @@
     <div class="card card-gray">
         <div class="card-header">
             <div class="header-block">
-                <p class="title">បង្កើត ទំព័រ
+                <p class="title">Create Page
                     <a href="{{url('admin/page')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
-                        <i class="fa fa-mail-reply"></i> ត្រលប់ក្រោយ</a>
+                        <i class="fa fa-mail-reply"></i> Back</a>
                 </p>
             </div>
         </div>
@@ -48,35 +48,54 @@
                 @endif
                 <form action="{{url('admin/page/save')}}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
-                   
+
                     <div class="form-group row">
-                        <label for="title" class="col-sm-4 form-control-label">ឈ្មោះ <span class="text-danger">*</span></label>
+                        <label for="menu_id" class="col-sm-4 form-control-label">Menu <span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}" required>
+                            <select name="menu_id" class="form-control chosen-select" id="menu_id" required>
+								<option value="">-- Select --</option>
+								@foreach($menus as $m)
+								    <option value="{{$m->id}}">{{$m->name}}</option>
+								@endforeach
+							</select>
                         </div>
                     </div>
                     
                     <div class="form-group row">
-                        <label for="description" class="col-sm-4 form-control-label">បរិយាយ</label>
+                        <label class="col-sm-4 form-control-label">Featured Image<span class="text-danger">(1920 × 400 pixels)</span></label>
                         <div class="col-sm-8">
-                            <textarea name="description" id="description" cols="30" rows="10" class="ckeditor"></textarea>
-                        </div>
-                    </div>
-                     
-                    <div class="form-group row">
-                        <label class="col-sm-4 form-control-label">រូបភាពផ្ទៃខាងក្រោយទំព័<span class="text-danger">(1920 × 400 pixels)</span></label>
-                        <div class="col-sm-8">
-                            <input type="file" class="form-control" required name="background" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)">
+                            <input type="file" class="form-control" required name="featured_image" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)">
                             <div style="margin-top: 3px">
                                 <img src="" alt="" width="100"  id="preview">
                             </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="title" class="col-sm-4 form-control-label">Title <span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="order" class="col-sm-4 form-control-label">Order</label>
+                        <div class="col-sm-8">
+                            <input type="number" step="1" class="form-control" id="order" name="order" value="{{old('order')}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="description" class="col-sm-4 form-control-label">Description</label>
+                        <div class="col-sm-8">
+                            <textarea name="description" id="description" cols="30" rows="10" class="ckeditor"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="Name" class="col-sm-4 form-control-label">&nbsp;</label>
                         <div class="col-sm-8">
                             <button type="submit" name="submit" class="btn btn-oval btn-primary"> 
-                                <i class="fa fa-save "></i> រក្សាទុក</button>
+                                <i class="fa fa-save "></i> Save</button>
                         </div>
                     </div>
                 </form>
