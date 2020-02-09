@@ -4,7 +4,7 @@
         <div class="card-header">
             <div class="col-sm-4">
                 <div class="header-block">
-                    <p class="title"> Social <a href="{{url('admin/social/create')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
+                    <p class="title"> Tracking <a href="{{url('admin/tracking/create')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
                         <i class="fa fa-plus"></i> Create</a>
                     </p>
                     
@@ -19,10 +19,12 @@
                         <thead class="flip-header">
                             <tr>
                                 <th>&numero;</th>
-                                <th>Name</th>
-                                <th>Url</th>
-                                <th>Icon</th>
-                                <th>Actions</th>
+                                <th>Way bill</th>
+                                <th>Origin</th>
+                                <th>Destination</th>
+                                <th>Datetime</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,16 +34,22 @@
                                 $pagex = 1;
                             $i = 18 * ($pagex - 1) + 1;
                             ?>
-                            @foreach($socials as $s)
+                            @foreach($trackings as $s)
                                 <tr class="odd gradeX">
                                     <td>{{$i++}}</td>
-                                    <td>{{$s->name}}</td>
-                                    <td>{{$s->url}}</td>
-                                    <td><img src="{{URL::asset($s->icon)}}" width="45"/></td>
                                     <td>
-                                        <a href="{{url('admin/social/edit/'.$s->id)}}" title="កែប្រែ" class="text-success">
+                                <a href="{{url('admin/tracking/detail/'.$s->id)}}">
+                                    {{$s->waybill}}
+                                </a>
+                            </td>
+                                    <th>{{$s->oname}}</th>
+                                    <th>{{$s->dname}}</th>
+                                    <th>{{$s->datetime}}</th>
+                                    <th>{{$s->sname}}</th>
+                                    <td>
+                                        <a href="{{url('admin/tracking/edit/'.$s->id)}}" title="កែប្រែ" class="text-success">
                                             <i class="fa fa-edit"></i></a>&nbsp;&nbsp;
-                                        <a href="{{url('admin/social/delete/'.$s->id)}}" title="លុប" 
+                                        <a href="{{url('admin/tracking/delete/'.$s->id)}}" title="លុប" 
                                         onclick="return confirm('Are you sure to delete?')" class="text-danger">
                                             <i class="fa fa-trash"></i></a>
                                     </td>
@@ -49,7 +57,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{$socials->links()}}
+                    {{$trackings->links()}}
                 </div>
             
         </div>
@@ -62,7 +70,7 @@
         $(document).ready(function () {
             $("#sidebar-menu li ").removeClass("active open");
 			$("#sidebar-menu li ul li").removeClass("active");
-            $("#menu_social").addClass("active");
+            $("#menu_tracking").addClass("active");
         })
     </script>
 @endsection

@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use Session;
 use Auth;
-class SocialController extends Controller
+use Session;
+class LocationController extends Controller
 {
-    /**
+                /**
      * Create a new controller instance.
      *
      * @return void
@@ -17,79 +17,69 @@ class SocialController extends Controller
     {
         $this->middleware('auth');
     }
-
     // index
     public function index()
     {
-        $data['socials'] = DB::table('socials')
+        $data['locations'] = DB::table('locations')
             ->where('active',1)
             ->orderBy('id', 'desc')
             ->paginate();
-        return view('socials.index', $data);
+        return view('locations.index', $data);
     }
     public function create()
     {
-        return view('socials.create');
+        return view('locations.create');
     }
     public function save(Request $r)
     {
         
         $data = array(
-            'url' => $r->url,
-            'name' => $r->name,
+            'name' => $r->name
         );
-        if($r->icon) {
-            $data['icon'] = $r->file('icon')->store('fronts/socials/', 'custom');
-        }
         $sms = "The new branch has been created successfully.";
         $sms1 = "Fail to create the new branch, please check again!";
-        $i = DB::table('socials')->insert($data);
+        $i = DB::table('locations')->insert($data);
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/admin/social/create');
+            return redirect('/admin/location/create');
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/admin/social/create')->withInput();
+            return redirect('/admin/location/create')->withInput();
         }
     }
     // delete
     public function delete($id)
     {
-        DB::table('socials')->where('id', $id)->update(['active'=>0]);
-        return redirect('/admin/social');
+        DB::table('locations')->where('id', $id)->update(['active'=>0]);
+        return redirect('/admin/location');
     }
     public function edit($id)
     {
-        $data['social'] = DB::table('socials')
+        $data['location'] = DB::table('locations')
             ->where('id',$id)->first();
-        return view('socials.edit', $data);
+        return view('locations.edit', $data);
     }
     
     public function update(Request $r)
     {
         $data = array(
-            'url' => $r->url,
-            'name' => $r->name,
+            'name' => $r->name
         );
-        if($r->icon) {
-            $data['icon'] = $r->file('icon')->store('fronts/socials/', 'custom');
-        }
         $sms = "All changes have been saved successfully.";
         $sms1 = "Fail to to save changes, please check again!";
-        $i = DB::table('socials')->where('id', $r->id)->update($data);
+        $i = DB::table('locations')->where('id', $r->id)->update($data);
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/admin/social/edit/'.$r->id);
+            return redirect('/admin/location/edit/'.$r->id);
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/admin/social/edit/'.$r->id);
+            return redirect('/admin/location/edit/'.$r->id);
         }
     }
 }
-

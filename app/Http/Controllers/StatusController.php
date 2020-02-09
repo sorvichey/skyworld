@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use Session;
 use Auth;
-class SocialController extends Controller
+use Session;
+class StatusController extends Controller
 {
-    /**
+            /**
      * Create a new controller instance.
      *
      * @return void
@@ -17,79 +17,69 @@ class SocialController extends Controller
     {
         $this->middleware('auth');
     }
-
     // index
     public function index()
     {
-        $data['socials'] = DB::table('socials')
+        $data['statuss'] = DB::table('statuss')
             ->where('active',1)
             ->orderBy('id', 'desc')
             ->paginate();
-        return view('socials.index', $data);
+        return view('statuss.index', $data);
     }
     public function create()
     {
-        return view('socials.create');
+        return view('statuss.create');
     }
     public function save(Request $r)
     {
         
         $data = array(
-            'url' => $r->url,
-            'name' => $r->name,
+            'name' => $r->name
         );
-        if($r->icon) {
-            $data['icon'] = $r->file('icon')->store('fronts/socials/', 'custom');
-        }
         $sms = "The new branch has been created successfully.";
         $sms1 = "Fail to create the new branch, please check again!";
-        $i = DB::table('socials')->insert($data);
+        $i = DB::table('statuss')->insert($data);
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/admin/social/create');
+            return redirect('/admin/status/create');
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/admin/social/create')->withInput();
+            return redirect('/admin/status/create')->withInput();
         }
     }
     // delete
     public function delete($id)
     {
-        DB::table('socials')->where('id', $id)->update(['active'=>0]);
-        return redirect('/admin/social');
+        DB::table('statuss')->where('id', $id)->update(['active'=>0]);
+        return redirect('/admin/status');
     }
     public function edit($id)
     {
-        $data['social'] = DB::table('socials')
+        $data['status'] = DB::table('statuss')
             ->where('id',$id)->first();
-        return view('socials.edit', $data);
+        return view('statuss.edit', $data);
     }
     
     public function update(Request $r)
     {
         $data = array(
-            'url' => $r->url,
-            'name' => $r->name,
+            'name' => $r->name
         );
-        if($r->icon) {
-            $data['icon'] = $r->file('icon')->store('fronts/socials/', 'custom');
-        }
         $sms = "All changes have been saved successfully.";
         $sms1 = "Fail to to save changes, please check again!";
-        $i = DB::table('socials')->where('id', $r->id)->update($data);
+        $i = DB::table('statuss')->where('id', $r->id)->update($data);
         if ($i)
         {
             $r->session()->flash('sms', $sms);
-            return redirect('/admin/social/edit/'.$r->id);
+            return redirect('/admin/status/edit/'.$r->id);
         }
         else
         {
             $r->session()->flash('sms1', $sms1);
-            return redirect('/admin/social/edit/'.$r->id);
+            return redirect('/admin/status/edit/'.$r->id);
         }
     }
 }
-

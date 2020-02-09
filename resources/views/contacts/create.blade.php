@@ -5,8 +5,8 @@
     <div class="card card-gray">
         <div class="card-header">
             <div class="header-block">
-                <p class="title">Create Social
-                    <a href="{{url('admin/social')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
+                <p class="title">Create Contact
+                    <a href="{{url('admin/contact')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
                         <i class="fa fa-mail-reply"></i> Back</a>
                 </p>
             </div>
@@ -46,27 +46,36 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{url('admin/social/save')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{url('admin/contact/save')}}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group row">
-                        <label for="name" class="col-sm-4 form-control-label">Name</label>
+                        <label for="address" class="col-sm-4 form-control-label">Address</label>
                         <div class="col-sm-8">
-                            <input type="text" step="1" name='name' id="name" class='form-control' value="{{old('name')}}">
+                            <input type="text" name='address' id="address" class='form-control' value="{{old('address')}}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="url" class="col-sm-4 form-control-label">Url<span class="text-danger">*</span></label>
+                        <label for="tel1" class="col-sm-4 form-control-label">Tel 1<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="url" name="url" value="{{old('url')}}" required>
+                            <input type="text" class="form-control" id="tel1" name="tel1" value="{{old('tel1')}}" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 form-control-label">Icon</label>
+                        <label for="tel2" class="col-sm-4 form-control-label">Tel 2</label>
                         <div class="col-sm-8">
-                            <input type="file" class="form-control" name="icon" onchange="loadFile(event)">
-                            <div style="margin-top: 3px">
-                                <img src="{{asset('fronts/socials/default.png')}}" alt="" width="60" id="preview">
-                            </div>
+                            <input type="text" class="form-control" id="tel2" name="tel2" value="{{old('tel2')}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email1" class="col-sm-4 form-control-label">Email 1<span class="text-danger">*</span></label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="email1" name="email1" value="{{old('email1')}}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email2" class="col-sm-4 form-control-label">Email 2</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="email2" name="email2" value="{{old('email2')}}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -88,7 +97,7 @@
             $("#sidebar-menu li ").removeClass("active open");
 			$("#sidebar-menu li ul li").removeClass("active");
 			
-            $("#menu_social").addClass("active");
+            $("#menu_contact").addClass("active");
 			
         });
         function loadFile(e){
