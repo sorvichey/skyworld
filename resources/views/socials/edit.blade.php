@@ -5,9 +5,9 @@
     <div class="card card-gray">
         <div class="card-header">
             <div class="header-block">
-                <p class="title">កែប្រែ បណ្តាញសង្គម
+                <p class="title">Edit Social
                     <a href="{{url('admin/social')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
-                        <i class="fa fa-mail-reply"></i> ត្រលប់ក្រោយ</a>
+                        <i class="fa fa-mail-reply"></i> Back</a>
                 </p>
             </div>
         </div>
@@ -50,20 +50,19 @@
                     {{csrf_field()}}
                     <input type="hidden" value="{{$social->id}}" name="id">
                     <div class="form-group row">
-                        <label for="url" class="col-sm-4 form-control-label">link ចូលទៅកាន់បណ្តាញសង្គម<span class="text-danger">*</span></label>
+                        <label for="name" class="col-sm-4 form-control-label">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" step="1" name='name' id="name" class='form-control' value="{{$social->name}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="url" class="col-sm-4 form-control-label">Url<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="url" name="url" value="{{$social->url}}" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="order" class="col-sm-4 form-control-label">លេខលំដាប់</label>
-                        <div class="col-sm-8">
-                            <input type="number" step="1" name='order' id="order" class='form-control' value="{{$social->order}}">
-                        </div>
-                    </div>
-                   
-                    <div class="form-group row">
-                        <label class="col-sm-4 form-control-label">រូបតំណាង</label>
+                        <label class="col-sm-4 form-control-label">Icon</label>
                         <div class="col-sm-8">
                             <input type="file" class="form-control" name="icon" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)">
                             <div style="margin-top: 3px">
@@ -75,7 +74,7 @@
                         <label for="Name" class="col-sm-4 form-control-label">&nbsp;</label>
                         <div class="col-sm-8">
                             <button type="submit" name="submit" class="btn btn-oval btn-primary"> 
-                                <i class="fa fa-save "></i> រក្សាទុក</button>
+                                <i class="fa fa-save "></i> Save</button>
                         </div>
                     </div>
                 </form>

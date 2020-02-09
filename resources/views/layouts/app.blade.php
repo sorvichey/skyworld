@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Chatoki| Vdoo Freelance Team</title>
+        <title>Sky World | Vdoo Freelance Team</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Battambang" rel="stylesheet">
@@ -97,9 +97,25 @@
                                     <a href="{{url('admin/benefit')}}">
 									<i class="fa fa-pagelines"></i>ផលប្រយោជន៍ Maccha</a>
 								</li>
+                                <li id="menu_tracking">
+                                    <a href="{{url('admin/tracking')}}">
+									<i class="fa fa-map" aria-hidden="true"></i> Tracking </a>
+								</li>
                                 <li id="menu_social">
                                     <a href="{{url('admin/social')}}">
-									<i class="fa fa-facebook"></i> បណ្តាញសង្គម </a>
+									<i class="fa fa-facebook"></i> Social </a>
+								</li>
+                                <li id="menu_choose_us">
+                                    <a href="{{url('admin/choose_us')}}">
+									<i class="fa fa-map" aria-hidden="true"></i> Choose Us </a>
+								</li>
+                                <li id="menu_industry">
+                                    <a href="{{url('admin/industry')}}">
+									<i class="fa fa-industry" aria-hidden="true"></i> Industry </a>
+								</li>
+                                <li id="menu_contact">
+                                    <a href="{{url('admin/contact')}}">
+									<i class="fa fa-phone-square" aria-hidden="true"></i> Contact </a>
 								</li>
                                 <li  id="menu_security">
                                     <a href="">
@@ -112,6 +128,26 @@
                                        
                                         <li id='menu_user'>
                                             <a href="{{url('user')}}"><i class="fa fa-users"></i> គណនីអ្នកប្រើប្រាស់ </a>
+										</li>
+									</ul>
+								</li>
+                                <li  id="menu_setting">
+                                    <a href="">
+                                        <i class="fa fa-cog" aria-hidden="true"></i> Setting <i class="fa arrow"></i>
+									</a>
+                                    <ul class="sidebar-nav"  id="setting_collapse">
+                                        <li id="status_id">
+                                            <a href="{{url('admin/status')}}"><i class="fa fa-check" aria-hidden="true"></i>  Status </a>
+										</li>
+                                       
+                                        <li id='destination_id'>
+                                            <a href="{{url('admin/destination')}}"><i class="fa fa-globe" aria-hidden="true"></i>  Destination </a>
+										</li>
+                                        <li id='location_id'>
+                                            <a href="{{url('admin/location')}}"><i class="fa fa-map-marker" aria-hidden="true"></i> Location </a>
+										</li>
+                                        <li id='origin_id'>
+                                            <a href="{{url('admin/origin')}}"><i class="fa fa-map-pin" aria-hidden="true"></i></i> Origin </a>
 										</li>
 									</ul>
 								</li>

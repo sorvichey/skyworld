@@ -62,4 +62,70 @@ Route::get('/admin/page/delete/{id}', "PageController@delete");
 Route::post('/admin/page/save', "PageController@save");
 Route::post('/admin/page/update', "PageController@update");
 
+// Contact
+Route::get('/admin/contact', "ContactController@index");
+Route::get('/admin/contact/create', "ContactController@create");
+Route::get('/admin/contact/edit/{id}', "ContactController@edit");
+Route::get('/admin/contact/delete/{id}', "ContactController@delete");
+Route::post('/admin/contact/save', "ContactController@save");
+Route::post('/admin/contact/update', "ContactController@update");
+
+// Status
+Route::get('/admin/status', "StatusController@index");
+Route::get('/admin/status/create', "StatusController@create");
+Route::get('/admin/status/edit/{id}', "StatusController@edit");
+Route::get('/admin/status/delete/{id}', "StatusController@delete");
+Route::post('/admin/status/save', "StatusController@save");
+Route::post('/admin/status/update', "StatusController@update");
+
+// Destination
+Route::get('/admin/destination', "DestinationController@index");
+Route::get('/admin/destination/create', "DestinationController@create");
+Route::get('/admin/destination/edit/{id}', "DestinationController@edit");
+Route::get('/admin/destination/delete/{id}', "DestinationController@delete");
+Route::post('/admin/destination/save', "DestinationController@save");
+Route::post('/admin/destination/update', "DestinationController@update");
+
+// Locations
+Route::get('/admin/location', "LocationController@index");
+Route::get('/admin/location/create', "LocationController@create");
+Route::get('/admin/location/edit/{id}', "LocationController@edit");
+Route::get('/admin/location/delete/{id}', "LocationController@delete");
+Route::post('/admin/location/save', "LocationController@save");
+Route::post('/admin/location/update', "LocationController@update");
+
+// Origin
+Route::get('/admin/origin', "OriginController@index");
+Route::get('/admin/origin/create', "OriginController@create");
+Route::get('/admin/origin/edit/{id}', "OriginController@edit");
+Route::get('/admin/origin/delete/{id}', "OriginController@delete");
+Route::post('/admin/origin/save', "OriginController@save");
+Route::post('/admin/origin/update', "OriginController@update");
+
+// Industry
+Route::get('/admin/industry', "IndustryController@index");
+Route::get('/admin/industry/create', "IndustryController@create");
+Route::get('/admin/industry/edit/{id}', "IndustryController@edit");
+Route::get('/admin/industry/delete/{id}', "IndustryController@delete");
+Route::post('/admin/industry/save', "IndustryController@save");
+Route::post('/admin/industry/update', "IndustryController@update");
+
+// Tracking
+Route::get('/admin/tracking', "TrackingController@index");
+Route::get('/admin/tracking/create', "TrackingController@create");
+Route::get('/admin/tracking/edit/{id}', "TrackingController@edit");
+Route::get('/admin/tracking/delete/{id}', "TrackingController@delete");
+Route::post('/admin/tracking/save', "TrackingController@save");
+Route::post('/admin/tracking/update', "TrackingController@update");
+Route::get('admin/tracking/detail/{id}', 'TrackingController@detail');
+
+
+// Choose US
+Route::get('/admin/choose_us', "ChooseUsController@index");
+Route::get('/admin/choose_us/create', "ChooseUsController@create");
+Route::get('/admin/choose_us/edit/{id}', "ChooseUsController@edit");
+Route::get('/admin/choose_us/delete/{id}', "ChooseUsController@delete");
+Route::post('/admin/choose_us/save', "ChooseUsController@save");
+Route::post('/admin/choose_us/update', "ChooseUsController@update");
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

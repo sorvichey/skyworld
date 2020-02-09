@@ -5,8 +5,8 @@
     <div class="card card-gray">
         <div class="card-header">
             <div class="header-block">
-                <p class="title">Create Social
-                    <a href="{{url('admin/social')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
+                <p class="title">Create Origin
+                    <a href="{{url('admin/origin')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
                         <i class="fa fa-mail-reply"></i> Back</a>
                 </p>
             </div>
@@ -46,27 +46,12 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{url('admin/social/save')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{url('admin/origin/save')}}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <div class="form-group row">
                         <label for="name" class="col-sm-4 form-control-label">Name</label>
                         <div class="col-sm-8">
-                            <input type="text" step="1" name='name' id="name" class='form-control' value="{{old('name')}}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="url" class="col-sm-4 form-control-label">Url<span class="text-danger">*</span></label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="url" name="url" value="{{old('url')}}" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-4 form-control-label">Icon</label>
-                        <div class="col-sm-8">
-                            <input type="file" class="form-control" name="icon" onchange="loadFile(event)">
-                            <div style="margin-top: 3px">
-                                <img src="{{asset('fronts/socials/default.png')}}" alt="" width="60" id="preview">
-                            </div>
+                            <input type="text" name='name' id="name" class='form-control' value="{{old('name')}}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -88,12 +73,10 @@
             $("#sidebar-menu li ").removeClass("active open");
 			$("#sidebar-menu li ul li").removeClass("active");
 			
-            $("#menu_social").addClass("active");
+            $("#menu_setting").addClass("active open");
+			$("#setting_collapse").addClass("collapse in");
+            $("#origin_id").addClass("active");
 			
         });
-        function loadFile(e){
-            var output = document.getElementById('preview');
-            output.src = URL.createObjectURL(e.target.files[0]);
-        }
     </script>
 @endsection

@@ -5,9 +5,9 @@
     <div class="card card-gray">
         <div class="card-header">
             <div class="header-block">
-                <p class="title">បង្កើត អាសយដ្ឋាន
+                <p class="title">Create Location
                     <a href="{{url('admin/location')}}" class="btn btn-primary-outline btn-oval btn-sm mx-left"> 
-                        <i class="fa fa-mail-reply"></i> ត្រលប់ក្រោយ</a>
+                        <i class="fa fa-mail-reply"></i> Back</a>
                 </p>
             </div>
         </div>
@@ -48,53 +48,23 @@
                 @endif
                 <form action="{{url('admin/location/save')}}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
-                   
                     <div class="form-group row">
-                        <label for="name" class="col-sm-4 form-control-label">ឈ្មោះ <span class="text-danger">*</span></label>
+                        <label for="name" class="col-sm-4 form-control-label">Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group row">
-                        <label for="address" class="col-sm-4 form-control-label">អាសយដ្ឋាន <span class="text-danger">*</span></label>
-                        <div class="col-sm-8">
-                            <input type="text" name='address' id="address" class='form-control' required value="{{old('address')}}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="phone" class="col-sm-4 form-control-label">លេខទូរស័ព្ទ <span class="text-danger">*</span></label>
-                        <div class="col-sm-8">
-                            <input type="text" name='phone' id="phone" class='form-control' required value="{{old('address')}}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="google_map" class="col-sm-4 form-control-label">Google Map លីង <span class="text-danger">*</span></label>
-                        <div class="col-sm-8">
-                            <input type="text" name='google_map' id="google_map" class='form-control' value="{{old('address')}}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-4 form-control-label">រូបភាពហាង <span class="text-danger">(750 × 500 pixels)</span></label>
-                        <div class="col-sm-8">
-                            <input type="file" class="form-control" required name="featured_image" accept="image/x-png,image/gif,image/jpeg" onchange="loadFile(event)">
-                            <div style="margin-top: 3px">
-                                <img src="" alt="" width="100"  id="preview">
-                            </div>
+                            <input type="text" name='name' id="name" class='form-control' value="{{old('name')}}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="Name" class="col-sm-4 form-control-label">&nbsp;</label>
                         <div class="col-sm-8">
                             <button type="submit" name="submit" class="btn btn-oval btn-primary"> 
-                                <i class="fa fa-save "></i> រក្សាទុក</button>
+                                <i class="fa fa-save "></i> Save</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
-                            
+    </div>                 
 @endsection
 
 @section('js')
@@ -103,12 +73,10 @@
             $("#sidebar-menu li ").removeClass("active open");
 			$("#sidebar-menu li ul li").removeClass("active");
 			
-            $("#menu_location").addClass("active");
+            $("#menu_setting").addClass("active open");
+			$("#setting_collapse").addClass("collapse in");
+            $("#location_id").addClass("active");
 			
         });
-        function loadFile(e){
-            var output = document.getElementById('preview');
-            output.src = URL.createObjectURL(e.target.files[0]);
-        }
     </script>
 @endsection
