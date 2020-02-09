@@ -70,19 +70,29 @@
                                     <a href="{{url('/dashboard')}}">
 									<i class="fa fa-home"></i> ទំព័រមុខ </a>
 								</li>
-                               
-                                <li id="menu_product">
-                                    <a href="{{url('/admin/product')}}">
-									<i class="fa fa-coffee"></i> ផលិតផល </a>
-								</li>
+                                <li id="menu_menu">
+                                    <a href="{{url('admin/menu')}}">
+                                        <i class="fa fa-picture-o"></i> Menu
+                                    </a>
+                                </li>
                                 <li id="menu_slide">
                                     <a href="{{url('admin/slide')}}">
                                         <i class="fa fa-picture-o"></i> Slides
                                     </a>
                                 </li>
+                                <li id="menu_product">
+                                    <a href="{{url('/admin/product')}}">
+									<i class="fa fa-coffee"></i> ផលិតផល </a>
+								</li>
+                                
                                 <li id="menu_page">
                                     <a href="{{url('admin/page')}}">
-                                    <i class="fa fa-flag"></i> ទំព័រ
+                                    <i class="fa fa-flag"></i> Page
+                                    </a>
+                                </li>
+                                <li id="menu_intropage">
+                                    <a href="{{url('admin/intropage')}}">
+                                    <i class="fa fa-flag"></i> Introduction Page
                                     </a>
                                 </li>
                                 <li id="menu_location">

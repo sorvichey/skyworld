@@ -62,6 +62,7 @@ Route::get('/admin/page/delete/{id}', "PageController@delete");
 Route::post('/admin/page/save', "PageController@save");
 Route::post('/admin/page/update', "PageController@update");
 
+<<<<<<< HEAD
 // Contact
 Route::get('/admin/contact', "ContactController@index");
 Route::get('/admin/contact/create', "ContactController@create");
@@ -127,5 +128,23 @@ Route::get('/admin/choose_us/edit/{id}', "ChooseUsController@edit");
 Route::get('/admin/choose_us/delete/{id}', "ChooseUsController@delete");
 Route::post('/admin/choose_us/save', "ChooseUsController@save");
 Route::post('/admin/choose_us/update', "ChooseUsController@update");
+=======
+
+// menu
+Route::get('/admin/menu', "MenuController@index");
+Route::get('/admin/menu/create', "MenuController@create");
+Route::post('/admin/menu/save', "MenuController@save");
+Route::get('/admin/menu/edit/{id}', "MenuController@edit");
+Route::post('/admin/menu/update', "MenuController@update");
+Route::get('/admin/menu/delete/{id}',"MenuController@delete");
+
+// introduction page
+Route::get('/admin/intropage', "IntroductionPageController@index");
+Route::get('/admin/intropage/create', "IntroductionPageController@create");
+Route::post('/admin/intropage/save', "IntroductionPageController@save");
+Route::get('/admin/intropage/edit/{id}', "IntroductionPageController@edit");
+Route::post('/admin/intropage/update', "IntroductionPageController@update");
+Route::get('/admin/intropage/delete/{id}',"IntroductionPageController@delete");
+>>>>>>> ea23a20cd48a0a96e08cdb97ff958bdd67e05d0c
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
