@@ -68,8 +68,8 @@
                                 <tr class="odd gradeX">
                                     <td>{{$i++}}</td>
                                     <td>
-                                        <a href="{{url('admin/service/detail'.$s->id)}}"></a>
-                                        {{$s->title}}
+                                        <a href="{{url('admin/service/detail/'.$s->id)}}">{{$s->title}}</a>
+                                        
                                     </td>
                                     <td><img src="{{URL::asset($s->icon)}}" width="60"/></td>
                                     <td>{{$s->order}}</td>

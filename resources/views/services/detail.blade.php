@@ -49,7 +49,7 @@
                    <div class="form-group row">
                         <label for="title" class="col-sm-4 form-control-label">Title </label>
                         <div class="col-sm-8">
-                            <input type="text" name='title' id="title" class='form-control' value="{{$service->title}}">
+                            : {{$service->title}}
                         </div>
                     </div>
 
@@ -57,7 +57,7 @@
                         <label class="col-sm-4 form-control-label">Icon</label>
                         <div class="col-sm-8">
                             <div style="margin-top: 3px">
-                                : <img src="{{URL::asset($service->icon)}}" class="img-responsive" alt="" width="200">
+                                : <img src="{{asset($service->icon)}}" class="img-responsive" alt="" width="200">
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="form-group row">
                         <label for="short_description" class="col-sm-4 form-control-label">Short Description</label>
                         <div class="col-sm-8">
-                            : {!!$service->short_description}
+                            : {!!$service->short_description!!}
                         </div>
                     </div>
 
